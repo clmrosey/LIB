@@ -5,7 +5,7 @@
 ** Login   <rosey_c@epitech.net>
 **
 ** Started on  Mon Nov 11 09:35:33 2013 rosey
-** Last update Mon Dec  2 14:13:18 2013 rosey
+** Last update Sun Jan 19 11:29:49 2014 clément
 */
 
 #include <stdarg.h>
@@ -13,11 +13,12 @@
 
 int	tab_format(va_list ap, int nb)
 {
-  int	d;
-
   int	(*ftr[1])(va_list);
+  int	d;
+  int	s;
 
   ftr[0] = &d;
+  ftr[0] = &s;
   (*ftr[nb])(ap);
 }
 
@@ -28,6 +29,7 @@ int	type(char format, va_list ap)
 
   i = 0;
   str = "d";
+  str = "s";
   while (str[i])
     {
       if (format == str[i])
